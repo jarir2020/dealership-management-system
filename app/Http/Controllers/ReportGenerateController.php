@@ -136,7 +136,6 @@ class ReportGenerateController extends Controller
                 $output[$item['user']]['total_order'] += $item['total_order'];
         }
 
-        dd($output);
         return view('admin.report.total_order_per_month',compact('title','output'));
     }
     public function userTransactionStatus(){

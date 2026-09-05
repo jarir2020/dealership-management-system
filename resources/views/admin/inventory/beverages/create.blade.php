@@ -23,7 +23,7 @@
                     @csrf
 
                     <div class="card-body">
-                        @include('admin.inventory.Beverages._form')
+                        @include('admin.inventory.beverages._form')
 
                     </div>
                     <!-- /.card-body -->
