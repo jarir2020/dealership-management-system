@@ -1,0 +1,243 @@
+/* ==========================================================================
+   Theme system — works with AdminLTE 3 / Bootstrap 4
+   Toggle via <html data-theme="light|dark|purple|green">.
+   Set the attribute BEFORE page render via the inline <head> script
+   (see _head.blade.php) to avoid a flash of unstyled content.
+   ========================================================================== */
+
+:root,
+[data-theme="light"] {
+    --theme-body-bg:        #f4f6f9;
+    --theme-body-color:     #212529;
+    --theme-primary:        #007bff;
+    --theme-secondary:      #6c757d;
+    --theme-sidebar-bg:     #343a40;
+    --theme-sidebar-color:  #c2c7d0;
+    --theme-sidebar-active-bg: #007bff;
+    --theme-header-bg:      #ffffff;
+    --theme-header-color:   #212529;
+    --theme-card-bg:        #ffffff;
+    --theme-card-border:    rgba(0, 0, 0, 0.125);
+    --theme-footer-bg:      #ffffff;
+    --theme-border-color:   #dee2e6;
+    --theme-input-bg:       #ffffff;
+    --theme-input-color:    #495057;
+    --theme-table-stripe:   rgba(0, 0, 0, 0.05);
+    --theme-text-muted:     #6c757d;
+}
+
+[data-theme="dark"] {
+    --theme-body-bg:        #1f2329;
+    --theme-body-color:     #e4e6eb;
+    --theme-primary:        #3b8bba;
+    --theme-secondary:      #adb5bd;
+    --theme-sidebar-bg:     #181c20;
+    --theme-sidebar-color:  #c2c7d0;
+    --theme-sidebar-active-bg: #3b8bba;
+    --theme-header-bg:      #23272e;
+    --theme-header-color:   #e4e6eb;
+    --theme-card-bg:        #2a2f37;
+    --theme-card-border:    #3a4049;
+    --theme-footer-bg:      #23272e;
+    --theme-border-color:   #3a4049;
+    --theme-input-bg:       #2a2f37;
+    --theme-input-color:    #e4e6eb;
+    --theme-table-stripe:   rgba(255, 255, 255, 0.04);
+    --theme-text-muted:     #8b95a1;
+}
+
+[data-theme="purple"] {
+    --theme-body-bg:        #f4f6f9;
+    --theme-body-color:     #212529;
+    --theme-primary:        #6f42c1;
+    --theme-secondary:      #6c757d;
+    --theme-sidebar-bg:     #343a40;
+    --theme-sidebar-color:  #c2c7d0;
+    --theme-sidebar-active-bg: #6f42c1;
+    --theme-header-bg:      #ffffff;
+    --theme-header-color:   #212529;
+    --theme-card-bg:        #ffffff;
+    --theme-card-border:    rgba(0, 0, 0, 0.125);
+    --theme-footer-bg:      #ffffff;
+    --theme-border-color:   #dee2e6;
+    --theme-input-bg:       #ffffff;
+    --theme-input-color:    #495057;
+    --theme-table-stripe:   rgba(0, 0, 0, 0.05);
+    --theme-text-muted:     #6c757d;
+}
+
+[data-theme="green"] {
+    --theme-body-bg:        #f4f6f9;
+    --theme-body-color:     #212529;
+    --theme-primary:        #28a745;
+    --theme-secondary:      #6c757d;
+    --theme-sidebar-bg:     #1e3a23;
+    --theme-sidebar-color:  #c2c7d0;
+    --theme-sidebar-active-bg: #28a745;
+    --theme-header-bg:      #ffffff;
+    --theme-header-color:   #212529;
+    --theme-card-bg:        #ffffff;
+    --theme-card-border:    rgba(0, 0, 0, 0.125);
+    --theme-footer-bg:      #ffffff;
+    --theme-border-color:   #dee2e6;
+    --theme-input-bg:       #ffffff;
+    --theme-input-color:    #495057;
+    --theme-table-stripe:   rgba(0, 0, 0, 0.05);
+    --theme-text-muted:     #6c757d;
+}
+
+/* ==========================================================================
+   Component overrides — every value comes from the variables above
+   ========================================================================== */
+
+body {
+    background-color: var(--theme-body-bg);
+    color: var(--theme-body-color);
+    transition: background-color 200ms ease, color 200ms ease;
+}
+
+.main-header {
+    background-color: var(--theme-header-bg) !important;
+    color: var(--theme-header-color) !important;
+    border-bottom: 1px solid var(--theme-border-color);
+}
+.main-header .nav-link,
+.main-header .navbar-nav .nav-link {
+    color: var(--theme-header-color);
+}
+
+.main-sidebar {
+    background-color: var(--theme-sidebar-bg) !important;
+}
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active,
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active:focus,
+[data-theme] .nav-sidebar .nav-link.active {
+    background-color: var(--theme-sidebar-active-bg) !important;
+    color: #fff !important;
+}
+.nav-sidebar .nav-link {
+    color: var(--theme-sidebar-color);
+}
+.nav-sidebar .nav-link p,
+.nav-sidebar .nav-link .nav-icon,
+.nav-sidebar .nav-link i {
+    color: inherit;
+}
+
+.content-wrapper {
+    background-color: var(--theme-body-bg);
+}
+
+.card {
+    background-color: var(--theme-card-bg);
+    border-color: var(--theme-card-border);
+    color: var(--theme-body-color);
+}
+.card .card-header,
+.card .card-footer {
+    background-color: var(--theme-card-bg);
+    border-color: var(--theme-card-border);
+}
+.card-title,
+.card-body,
+.card-text {
+    color: var(--theme-body-color);
+}
+
+.main-footer {
+    background-color: var(--theme-footer-bg) !important;
+    color: var(--theme-body-color) !important;
+    border-top: 1px solid var(--theme-border-color);
+}
+.main-footer a {
+    color: var(--theme-primary);
+}
+
+.form-control,
+.form-control:focus,
+select.form-control,
+textarea.form-control,
+input.form-control {
+    background-color: var(--theme-input-bg);
+    color: var(--theme-input-color);
+    border-color: var(--theme-border-color);
+}
+
+.table {
+    color: var(--theme-body-color);
+}
+.table-bordered,
+.table-bordered th,
+.table-bordered td {
+    border-color: var(--theme-border-color);
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--theme-table-stripe);
+}
+
+.text-muted {
+    color: var(--theme-text-muted) !important;
+}
+.breadcrumb {
+    background-color: transparent;
+}
+.breadcrumb-item,
+.breadcrumb-item a {
+    color: var(--theme-text-muted);
+}
+.breadcrumb-item.active {
+    color: var(--theme-body-color);
+}
+.content-header h1 {
+    color: var(--theme-body-color);
+}
+
+.dropdown-menu {
+    background-color: var(--theme-card-bg);
+    border-color: var(--theme-border-color);
+}
+.dropdown-item {
+    color: var(--theme-body-color);
+}
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: var(--theme-table-stripe);
+    color: var(--theme-body-color);
+}
+.dropdown-item.active,
+.dropdown-item:active {
+    background-color: var(--theme-primary);
+    color: #fff;
+}
+.dropdown-divider {
+    border-color: var(--theme-border-color);
+}
+
+.btn-primary {
+    background-color: var(--theme-primary);
+    border-color: var(--theme-primary);
+}
+.btn-primary:hover,
+.btn-primary:focus {
+    filter: brightness(0.92);
+}
+
+a {
+    color: var(--theme-primary);
+}
+hr {
+    border-top-color: var(--theme-border-color);
+}
+.modal-content {
+    background-color: var(--theme-card-bg);
+    color: var(--theme-body-color);
+}
+
+/* Theme picker active indicator (JS toggles .active on the picked item) */
+.theme-pick.active {
+    background-color: var(--theme-primary);
+    color: #fff;
+}
+.theme-pick.active i {
+    color: #fff;
+}

@@ -1,5 +1,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+{{-- Theme: apply stored theme BEFORE first paint to avoid FOUC. Must run before any CSS. --}}
+<script>(function(){var t;try{t=localStorage.getItem('dms-theme')}catch(e){};if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
 <title>DMS | {{isset($title)?$title:null}}</title>
 <!-- Tell the browser to be responsive to screen width -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,6 +19,8 @@
 <link rel="stylesheet" href="{{asset('assets/admin/plugins/jqvmap/jqvmap.min.css')}}">
 <!-- Theme style -->
 <link rel="stylesheet" href="{{asset('assets/admin/dist/css/adminlte.min.css')}}">
+{{-- Theme system: must load AFTER adminlte.min.css so its variables win. --}}
+<link rel="stylesheet" href="{{asset('assets/admin/dist/css/themes.css')}}">
 <!-- overlayScrollbars -->
 <link rel="stylesheet" href="{{asset('assets/admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
 <!-- Daterange picker -->

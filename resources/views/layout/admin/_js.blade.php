@@ -44,4 +44,6 @@
         $('.select2').select2()
     })
 </script>
+{{-- Theme switcher (vanilla JS, no jQuery). See public/assets/admin/dist/js/theme.js. --}}
+<script src="{{asset('assets/admin/dist/js/theme.js')}}"></script>
 @stack('js')

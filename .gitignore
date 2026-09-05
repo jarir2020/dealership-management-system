@@ -5,9 +5,14 @@
 /vendor
 /.idea
 .env
+/credentials.txt
 
 # Build artifacts and node_modules under the bundled admin template assets.
 # Source assets (css/js/img/plugins) live under public/assets/admin/ and
 # public/assets/make_order/ and SHOULD be committed.
+# We DO commit /public/assets/admin/dist/ (the AdminLTE distribution) — that's
+# the actual source for adminlte.js, adminlte.min.css, etc. We only ignore the
+# nested dist/ folders that exist INSIDE specific plugins (chart.js/dist, etc.)
+# and the node_modules folders.
 /public/assets/**/node_modules
-/public/assets/**/dist
+/public/assets/admin/plugins/**/dist
