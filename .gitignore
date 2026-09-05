@@ -1,0 +1,13 @@
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+/.idea
+.env
+
+# Build artifacts and node_modules under the bundled admin template assets.
+# Source assets (css/js/img/plugins) live under public/assets/admin/ and
+# public/assets/make_order/ and SHOULD be committed.
+/public/assets/**/node_modules
+/public/assets/**/dist
